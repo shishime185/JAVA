@@ -26,19 +26,19 @@ public class Curriculum_New_question {
   //  ブーリアン型 (boolean)
 	 static boolean boolVal;
 
-public static void main(String[] args) {
+	 public static void main(String[] args) {
 	 
 	 
-    // Q2 それぞれのクラス変数をローカル内でそれぞれの初期値を代入し初期化してください
-	  byteVal = 0;
-   shortVal = 0;
-   intVal = 0;
-   longVal = 0L;
-   floatVal = 0.0f;
-   doubleVal = 0.0;
-   charVal = '\u0000';
-   strVal = "";
-   boolVal = false;
+	 // Q2 それぞれのクラス変数をローカル内でそれぞれの初期値を代入し初期化してください
+	 byteVal = 0;
+	 shortVal = 0;
+	 intVal = 0;
+	 longVal = 0L;
+	 floatVal = 0.0f;
+	 doubleVal = 0.0;
+	 charVal = '\u0000';
+	 strVal = null;
+	 boolVal = false;
 
 
     // Q3 初期化をしたそれぞれの変数に下記の値を代入してください
@@ -52,15 +52,15 @@ public static void main(String[] args) {
     // ・文字型                   a
     // ・文字列型              	 ハロー
     // ・ブーリアン型          	 true
-		 byteVal = 10;
-		 shortVal = 100;
-		 intVal = 1000;
-		 longVal = 10000L;
-		 floatVal = 9.5f;
-		 doubleVal = 10.5;
-		 charVal = 'a';
-		 strVal = "ハロー";
-		 boolVal = true;
+	byteVal = 10;
+	shortVal = 100;
+	intVal = 1000;
+	longVal = 10000L;
+	floatVal = 9.5f;
+	doubleVal = 10.5;
+	charVal = 'a';
+	strVal = "ハロー";
+	boolVal = true;
 
 
     // Q4 下記の通りにコンソール出力されるようにしてください
@@ -74,35 +74,35 @@ public static void main(String[] args) {
     // 0.105                      10.5割る100をする
     // -90                        10引く100をする
 
-	 // 11110になるように計算
-		 System.out.println(byteVal + shortVal + intVal + longVal);
+	// 11110になるように計算
+	System.out.println(byteVal + shortVal + intVal + longVal);
 
-		 // 20.0になるように足し算
-		 System.out.println(doubleVal + floatVal);
+	// 20.0になるように足し算
+	System.out.println(doubleVal + floatVal);
 
-		 // a ハロー true
-		 System.out.println(charVal + " " + strVal + " " + boolVal);
+	// a ハロー true
+	System.out.println(charVal + " " + strVal + " " + boolVal);
 
-		 // 11130.0 数字を全て足す
-		 System.out.println(byteVal + shortVal + intVal + longVal + floatVal + (float) doubleVal);
+	// 11130.0 数字を全て足す
+	System.out.println(byteVal + shortVal + intVal + longVal + floatVal + (float) doubleVal);
 
-		 // 10000000000 小数点以外の数字を全てかける
-		 System.out.println((long) byteVal * shortVal * intVal * longVal);
+	// 10000000000 小数点以外の数字を全てかける
+	System.out.println((long) byteVal * shortVal * intVal * longVal);
 
-		 // 0.105 10.5割る100をする
-		 System.out.println(doubleVal / 100.0);
+	// 0.105 10.5割る100をする
+	System.out.println(doubleVal / 100.0);
 
-		 // -90 10引く100をする
-		 System.out.println(byteVal - shortVal);
+	// -90 10引く100をする
+	System.out.println(byteVal - shortVal);
 
 		 
 	// Q5 
 	// 次のプログラムを実行すると「ハローJAVA2023」という結果が表示されます。
 	//「ハローJAVA43」と表示とさせたいのですが、意図通りに動きません。正しく動作するように修正してください。
-	  String num = "20";
-   int num1 = 23;
+	 String num = "20";
+	 int num1 = 23;
 			// 数値で表示させるためにInteger.parseIntをつける。
-   System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
+	 System.out.println("ハローJAVA" + (Integer.parseInt(num) + num1));
 	 
 }
 
