@@ -21,13 +21,13 @@ public class Curriculum_new_1_5 {
         double height = 170.5;
         double weight = 62.2;
         String favoriteFood = "寿司";
-//        %s、%d、%.1f などのフォーマット指定子を使って、変数の値を文字列に埋め込む。
-//        %s : 文字列型
-//        %d : 整数型 (10進数)
-//        %f : 浮動小数点型
-//        %c : 文字型
-//        %b : 真偽値型
-//        %.1fは、浮動小数点数を出力する時に、小数点以下1桁まで表示する
+//      %s、%d、%.1f などのフォーマット指定子を使って、変数の値を文字列に埋め込む。
+//      %s : 文字列型
+//      %d : 整数型 (10進数)
+//      %f : 浮動小数点型
+//      %c : 文字型
+//      %b : 真偽値型
+//      %.1fは、浮動小数点数を出力する時に、小数点以下1桁まで表示する
         String introduction = String.format("初めまして%sです", name);
         String ageDescription = String.format("年齢は%d歳です", age);
         String heightDescription = String.format("身長は%.1fcmです", height);
