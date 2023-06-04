@@ -26,10 +26,6 @@ public class Question23_1 {
 		System.out.println("体長：" + lion.getLength() + "m");
 		System.out.println("速度：" + lion.getSpeed() + "km/h");
 
-	
-		
-		
-
 	}
 
 }

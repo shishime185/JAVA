@@ -4,7 +4,7 @@ public class Question23_2 {
 
 	// インスタンスの生成
 	private String name;
-
+ 
 	private double length;
 
 	private double speed;
@@ -46,6 +46,6 @@ public class Question23_2 {
 	public double getSpeed() {// speed
 
 	return this.speed; // speedの値を返す
-
+ 
 	}
 }
