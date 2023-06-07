@@ -1,9 +1,10 @@
 package curriculum_B;
+
 import java.util.Random;
 import java.util.Scanner;
 
 class Qes1_3 {
-    //	Stringに手を格納
+    // Stringに手を格納
     private static final String[] HANDS = {"グー", "チョキ", "パー"};
 
     public static void main(String[] args) {
@@ -13,7 +14,8 @@ class Qes1_3 {
         // ユーザー名入力
         System.out.print("ユーザー名を入力してください: ");
         userName = scanner.nextLine();
-        // 入力ミス
+
+        // 入力ミスの時
         if (userName == null || userName.length() <= 0) {
             System.out.println("名前を入力してください");
         } else if (userName.length() > 10) {
@@ -25,37 +27,39 @@ class Qes1_3 {
             startRockPaperScissors(userName, scanner);
         }
 
-        scanner.close(); // Scannerオブジェクトを閉じる
+        // Scannerオブジェクトを閉じる
+        scanner.close();
     }
 
     private static void startRockPaperScissors(String userName, Scanner scanner) {
-        int totalRounds = 0; // 総回数の変数を初期化
+        // 総回数の変数を初期化
+        int totalRounds = 0;
         Random random = new Random();
-        boolean continueGame = true; // ゲーム継続フラグを初期化
+        // ゲーム継続フラグを初期化
+        boolean continueGame = true;
 
         do {
-            // ユーザーの手の入力
-            System.out.print(userName + "の手を選んでください（0:グー, 1:チョキ, 2:パー）: ");
-            int userHand = scanner.nextInt(); // ユーザーの手を入力
-            scanner.nextLine();
-
-            if (userHand < 0 || userHand > 2) { // 入力値のエラーを防ぐためのチェック
-                System.out.println("正しい手を選んでください");
-                continue; // 入力が不正な場合は再度入力を促す
-            }
-
-            int computerHand = random.nextInt(3); // コンピュータの手をランダムに選択
+            // ユーザーの手をランダムに選択
+            int userHand = random.nextInt(3);
             System.out.println(userName + "の手は「" + HANDS[userHand] + "」");
-            System.out.println("相手の手は「" + HANDS[computerHand] + "」");
-            totalRounds++; // 総回数をインクリメント
 
-            if (userHand == computerHand) { // 引き分けの場合
+            // コンピュータの手をランダムに選択
+            int computerHand = random.nextInt(3);
+            System.out.println("相手の手は「" + HANDS[computerHand] + "」");
+            // 総回数をインクリメント
+            totalRounds++;
+
+            // 引き分けの場合
+            if (userHand == computerHand) {
                 System.out.println("DRAW あいこ もう一回しましょう！");
             } else if ((userHand == 0 && computerHand == 1) || (userHand == 1 && computerHand == 2)
-                    || (userHand == 2 && computerHand == 0)) { // ユーザーの勝ちの場合
+                    || (userHand == 2 && computerHand == 0)) {
+                // ユーザーが勝ちの場合
                 System.out.println("やるやん。次は俺にリベンジさせて");
-                continueGame = false; // ゲーム終了フラグをセット
-            } else { // ユーザーの負けの場合
+                // ゲーム終了フラグをセット
+                continueGame = false;
+            } else {
+                // ユーザーの負けの場合
                 System.out.println("俺の勝ち！");
                 if (userHand == 0 && computerHand == 2) {
                     System.out.println("なんで負けたか、明日まで考えといてください。そしたら何かが見えてくるはずです");
@@ -65,8 +69,10 @@ class Qes1_3 {
                     System.out.println("たかがじゃんけん、そう思ってないですか？それやったら次も、俺が勝ちますよ");
                 }
             }
-        } while (continueGame); // ゲーム継続フラグが true の場合は繰り返し
+            // ゲーム継続フラグが true の場合は繰り返し
+        } while (continueGame);
 
+        // 出力
         System.out.println("勝つまでにかかった合計回数は" + totalRounds + "回です");
     }
 }
