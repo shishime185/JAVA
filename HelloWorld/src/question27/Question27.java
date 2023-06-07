@@ -138,7 +138,7 @@ class Question27 {
 				
 				// switchi文を終了させる
 				break;
-				
+	
 				}
 
 			// 動物名ステータス出力
