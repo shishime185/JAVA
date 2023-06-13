@@ -12,21 +12,26 @@ class Qes1_3 {
         String userName = "";
 
         // ユーザー名入力
-        System.out.print("ユーザー名を入力してください: ");
-        userName = scanner.nextLine();
+        while (true) {
+            userName = scanner.nextLine();
 
-        // 入力ミスの時
-        if (userName == null || userName.length() <= 0) {
-            System.out.println("名前を入力してください");
-        } else if (userName.length() > 10) {
-            System.out.println("名前を10文字以内にしてください");
-        } else if (!userName.matches("[a-zA-Z0-9]+")) {
-            System.out.println("半角英数字のみで名前を入力してください");
-        } else {
-            System.out.println("ユーザー名「" + userName + "」を登録しました");
-            startRockPaperScissors(userName, scanner);
+            // 入力ミスの時
+            if (userName == null || userName.length() <= 0) {
+                System.out.println("名前を入力してください");
+            } else if (userName.length() > 10) {
+                System.out.println("名前を10文字以内にしてください");
+            } else if (!userName.matches("[a-zA-Z0-9]+")) {
+                System.out.println("半角英数字のみで名前を入力してください");
+            } else {
+                System.out.println("ユーザー名「" + userName + "」を登録しました");
+                startRockPaperScissors(userName, scanner);
+                break;
+                
+            }
+            // 改行
+            System.out.println();
         }
-
+        
         // Scannerオブジェクトを閉じる
         scanner.close();
     }
@@ -48,16 +53,25 @@ class Qes1_3 {
             System.out.println("相手の手は「" + HANDS[computerHand] + "」");
             // 総回数をインクリメント
             totalRounds++;
+            // 改行
+            System.out.println();
 
             // 引き分けの場合
             if (userHand == computerHand) {
                 System.out.println("DRAW あいこ もう一回しましょう！");
+                // 改行
+                System.out.println();
             } else if ((userHand == 0 && computerHand == 1) || (userHand == 1 && computerHand == 2)
                     || (userHand == 2 && computerHand == 0)) {
+                
                 // ユーザーが勝ちの場合
-                System.out.println("やるやん。次は俺にリベンジさせて");
+                System.out.println("やるやん。");
+                System.out.println("次は俺にリベンジさせて");
                 // ゲーム終了フラグをセット
                 continueGame = false;
+                // 改行
+                System.out.println();
+                
             } else {
                 // ユーザーの負けの場合
                 System.out.println("俺の勝ち！");
@@ -68,6 +82,8 @@ class Qes1_3 {
                 } else {
                     System.out.println("たかがじゃんけん、そう思ってないですか？それやったら次も、俺が勝ちますよ");
                 }
+                // 改行
+                System.out.println();
             }
             // ゲーム継続フラグが true の場合は繰り返し
         } while (continueGame);

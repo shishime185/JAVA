@@ -1,23 +1,27 @@
 package curriculum_B;
+
 import java.util.Scanner;
 
 public class Qes7 {
 
     public static void main(String[] args) {
-    	// ユーザーの入力を読み取るためのScannerオブジェクトを作成
+        // ユーザーの入力を読み取るためのScannerオブジェクトを作成
         Scanner scanner = new Scanner(System.in);
-
         System.out.print("生徒の人数を入力してください（2以上）: ");
+
         // 生徒の人数をユーザーから読み取る
         int numStudents = scanner.nextInt();
 
         // 4つの教科の各生徒の点数を格納する2次元配列を作成
         int[][] scores = new int[numStudents][4];
 
+        // 各生徒に対してループ処理を行う
         for (int i = 0; i < numStudents; i++) {
-            System.out.println((i + 1) + "人目の成績を入力してください：");
+        	// 4つの教科に対してループ処理を行う
             for (int j = 0; j < 4; j++) {
                 System.out.print((i + 1) + "人目の『");
+                
+                // 教科ごとに表示する科目を切り替える
                 switch (j) {
                     case 0:
                         System.out.print("英語");
@@ -32,17 +36,19 @@ public class Qes7 {
                         System.out.print("社会");
                         break;
                 }
+
                 System.out.print("』の点数を入力してください: ");
                 // 各生徒の各教科の点数を読み取る
                 scores[i][j] = scanner.nextInt();
             }
+
             System.out.println();
         }
 
         System.out.println();
 
         for (int i = 0; i < numStudents; i++) {
-        	// 各生徒の平均点を計算する
+            // 各生徒の平均点を計算する
             double average = calculateAverage(scores[i]);
             // 各生徒の平均点を表示する
             System.out.printf("%d人目の平均点は%.2f点です。\n", (i + 1), average);
@@ -50,7 +56,7 @@ public class Qes7 {
 
         // 各教科の平均点を計算する
         double[] subjectAverages = calculateSubjectAverages(scores);
-        // 各教科の平均点を計算する
+
         System.out.println();
         System.out.printf("英語の平均点は%.2f点です。\n", subjectAverages[0]);
         System.out.printf("数学の平均点は%.2f点です。\n", subjectAverages[1]);
@@ -62,14 +68,15 @@ public class Qes7 {
         // 全体の平均点を表示する
         System.out.printf("全体の平均点は%.2f点です。\n", overallAverage);
 
-        // Scanner閉じる
+        // Scannerを閉じる
         scanner.close();
     }
+    
 
     public static double calculateAverage(int[] scores) {
         int sum = 0;
         for (int score : scores) {
-        	// 点数の合計を求める
+            // 点数の合計を求める
             sum += score;
         }
         // 平均点を計算する
@@ -77,14 +84,15 @@ public class Qes7 {
     }
 
     public static double[] calculateSubjectAverages(int[][] scores) {
-    	// 教科の数を取得する
+        // 教科の数を取得する
         int numSubjects = scores[0].length;
         // 各教科の平均点を格納する配列
         double[] averages = new double[numSubjects];
+
         for (int i = 0; i < numSubjects; i++) {
             int sum = 0;
             for (int[] studentScores : scores) {
-            	// 各教科の点数を合計する
+                // 各教科の点数を合計する
                 sum += studentScores[i];
             }
             // 平均点を計算して配列に代入する
@@ -97,9 +105,11 @@ public class Qes7 {
     public static double calculateOverallAverage(int[][] scores) {
         int totalSum = 0;
         int numElements = scores.length * scores[0].length;
+        
+        // 各生徒の各教科の点数を合計する
         for (int[] studentScores : scores) {
             for (int score : studentScores) {
-            	// 点数の合計を計算する
+                // 点数の合計を計算する
                 totalSum += score;
             }
         }
