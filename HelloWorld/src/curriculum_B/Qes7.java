@@ -3,25 +3,21 @@ package curriculum_B;
 import java.util.Scanner;
 
 public class Qes7 {
-
-    public static void main(String[] args) {
-        // ユーザーの入力を読み取るためのScannerオブジェクトを作成
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("生徒の人数を入力してください（2以上）: ");
-
-        // 生徒の人数をユーザーから読み取る
+	
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner (System.in);
+		System.out.print ("生徒の人数を入力してください（２以上）：");
+		
+		// 生徒の人数をユーザーから読み取る
         int numStudents = scanner.nextInt();
-
-        // 4つの教科の各生徒の点数を格納する2次元配列を作成
-        int[][] scores = new int[numStudents][4];
-
-        // 各生徒に対してループ処理を行う
-        for (int i = 0; i < numStudents; i++) {
-        	// 4つの教科に対してループ処理を行う
-            for (int j = 0; j < 4; j++) {
-                System.out.print((i + 1) + "人目の『");
-                
-                // 教科ごとに表示する科目を切り替える
+        
+		int[][] scores = new int[numStudents][4];
+		
+		for(int i = 0; i < numStudents; i++) {
+			for(int j = 0; j < 4; j++) {
+				System.out.print((i + 1) + "人目の『");
+				
+				// 教科ごとに表示する科目を切り替える
                 switch (j) {
                     case 0:
                         System.out.print("英語");
@@ -36,16 +32,14 @@ public class Qes7 {
                         System.out.print("社会");
                         break;
                 }
-
+                
                 System.out.print("』の点数を入力してください: ");
                 // 各生徒の各教科の点数を読み取る
                 scores[i][j] = scanner.nextInt();
             }
-
+			
             System.out.println();
         }
-
-        System.out.println();
 
         for (int i = 0; i < numStudents; i++) {
             // 各生徒の平均点を計算する
@@ -103,7 +97,7 @@ public class Qes7 {
     }
 
     public static double calculateOverallAverage(int[][] scores) {
-        int totalSum = 0;
+    	int totalSum = 0;
         int numElements = scores.length * scores[0].length;
         
         // 各生徒の各教科の点数を合計する
@@ -115,5 +109,6 @@ public class Qes7 {
         }
         // 全体の平均点を計算して返す
         return (double) totalSum / numElements;
-    }
+    
+	}
 }
