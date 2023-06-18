@@ -1,10 +1,10 @@
 package question25_2;
 
-//Question25_2クラスを継承したSubCharacterクラスの定義
+// 親クラスを継承するサブクラスの宣言
 public class SubCharacter extends Question25_2 {
-
+	// コンストラクタの定義
     public SubCharacter(String name) {
-    	// スーパークラスのコンストラクタを呼び出して名前を設定
+    	// 親クラスのコンストラクタ呼び出し引数を渡す。
         super(name); 
     }
 }

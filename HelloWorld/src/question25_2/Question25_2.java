@@ -3,7 +3,6 @@ package question25_2;
 import java.util.Random;
 
 public class Question25_2 {
-	
 	// ステータス
     private String name;
     private int hp;
@@ -71,19 +70,20 @@ public class Question25_2 {
     	// 防御力セッターメソッド
         this.defense = defense;
     }
-
+    
+    // ランダムステータス生成（メソッド）
     public void generateRandomStatus() {
-        // ランダムステータス生成（メソッド）
 
-        Random random = new Random(); // 乱数生成器
+
+    // 乱数生成器
+    Random random = new Random();
         
-        // 1から1000までの範囲でランダムな値を生成
-        hp = random.nextInt(1000) + 1;
-        mp = random.nextInt(1000) + 1;
-        attack = random.nextInt(1000) + 1; 
-        agility = random.nextInt(1000) + 1;
-        defense = random.nextInt(1000) + 1;
-        
-        
-    }
+    // 1から1000までの範囲でランダムな値を生成
+    hp = random.nextInt(1000) + 1;
+    mp = random.nextInt(1000) + 1;
+    attack = random.nextInt(1000) + 1; 
+    agility = random.nextInt(1000) + 1;
+    defense = random.nextInt(1000) + 1;
+    
+   }
 }
