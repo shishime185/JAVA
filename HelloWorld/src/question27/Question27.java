@@ -46,16 +46,16 @@ class Question27 {
 		
 		*/
 
-		// 指示をコンソールに出力
+		// 出力
 		System.out.println("コンソールに文字を入力してください");
 
-		// Scannerオブジェクトを作成
+		// Scannerオブジェクト作成
 		Scanner scanner = new Scanner(System.in);
 
-		// 入力を受け取りinputに代入
+		// 入力を受け取り代入
 		String input = scanner.nextLine();
 
-		// Scannerクラスを閉じる
+		// Scannerを閉じる
 		scanner.close();
 		
 		// 改行
@@ -67,22 +67,22 @@ class Question27 {
 		// 配列の各要素を処理するための繰り返しを開始
 		for (String animal : animals) {
 
-			// 動物の情報をコロンで区切ってanimalInfo配列に代入
+			// 動物の情報をコロンで区切って配列に代入
 			String[] animalInfo = animal.split(":");
 
-			// 動物の名前をname変数に代入
+			// 動物の名前を変数に代入
 			String name = animalInfo[0];
 
-			// 動物の体長をlength変数に代入
+			// 動物の体長を変数に代入
 			String length = animalInfo[1] + "m";
 
-			// 動物の速度をspeed変数に代入
+			// 動物の速度を変数に代入
 			String speed = animalInfo[2] + "km/h";
 
 			// 学名の変数を宣言
 			String scientificName = null;
 
-				// nameのによる条件分岐
+				// 変数による条件分岐
 				switch (name) {
 
 				// ライオンの場合
@@ -91,7 +91,7 @@ class Question27 {
 				// パンテラ レオを代入
 				scientificName = "パンテラ レオ";
 				
-				// switchi文を終わらす
+				// switchi文を終了
 				break;
 				
 				// ゾウの場合
@@ -100,7 +100,7 @@ class Question27 {
 				// ロキソドンタ・サイクロティスを代入
 				scientificName = "ロキソドンタ・サイクロティス";
 				
-				// switchi文を終わらす
+				// switchi文終了
 				break;
 
 				// パンダの場合
@@ -109,7 +109,7 @@ class Question27 {
 				// アイルロポダ・メラノレウカを代入
 				scientificName = "アイルロポダ・メラノレウカ";
 				
-				// switchi文を終わらす
+				// switchi文終了
 				break;
 
 				// チンパンジーの場合
@@ -118,7 +118,7 @@ class Question27 {
 				// パン・トゥログロディテスを代入
 				scientificName = "パン・トゥログロディテス";
 				
-				// switchi文を終わらす
+				// switchi文終了
 				break;
 
 				// シマウマの場合
@@ -127,7 +127,7 @@ class Question27 {
 				// チャップマンシマウマを代入
 				scientificName = "チャップマンシマウマ";
 				
-				// switchi文を終わらす
+				// switchi文終了
 				break;
 
 				// インコの場合
@@ -136,7 +136,7 @@ class Question27 {
 				// 不明を代入
 				scientificName = "不明";
 				
-				// switchi文を終了させる
+				// switchi文終了
 				break;
 	
 				}
