@@ -13,6 +13,7 @@ public class Question23_1 {
 		速度：80km/h
 		
 		*/
+		
 		// インスタンスを生成
 		Question23_2 lion = new Question23_2();
 

@@ -4,48 +4,49 @@ public class Question23_2 {
 
 	// インスタンスの生成
 	private String name;
- 
+	
 	private double length;
-
+	
 	private double speed;
 
 	// コンストラクター生成
 	public Question23_2() {}
 
 	
-	// name,length,speedをセットするメソッド
+	// 変数をセットするメソッド
 	
-	public void setName(String name) { // name
-	
-	this.name = name; // フィールドの値を受け取りインスタンス変数にセット
-	}
-	public void setLength(double length) { // length
-	
-	this.length = length; // フィールドの値を受け取りインスタンス変数にセット
-	}
-	public void setSpeed(double speed) { // speed
-	
-	this.speed = speed; // フィールドの値を受け取りインスタンス変数にセット
+	public void setName(String name) {
+	// フィールドの値を受け取りインスタンス変数にセット
+	this.name = name; 
 	}
 
+	public void setLength(double length) {
+	// フィールドの値を受け取りインスタンス変数にセット
+	this.length = length;
+	}
 	
-	// name,length,speedを取得するメソッド
-	
-	public String getName() { // name
-
-	return this.name; // nameの値を返す
-	
+	public void setSpeed(double speed) {
+	// フィールドの値を受け取りインスタンス変数にセット
+	this.speed = speed;
 	}
 
-	public double getLength() { // length
-
-	return this.length; // lengthの値を返す
+	
+	// 変数の値を取得するメソッド
+	
+	public String getName() {
+	// 変数の値を返す
+	return this.name;
+	}
+	
+	public double getLength() {
+	// 変数の値を返す
+	return this.length;
 	
 	}
-
-	public double getSpeed() {// speed
-
-	return this.speed; // speedの値を返す
+	
+	public double getSpeed() {
+	// 変数の値を返す
+	return this.speed;
  
 	}
 }
