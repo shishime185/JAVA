@@ -66,20 +66,10 @@ class Qes1_3 {
             totalRounds++;
 
 
-            if ((userHand == 0 && computerHand == 1) || (userHand == 1 && computerHand == 2)
-            	    || (userHand == 2 && computerHand == 0)) {
+            if ((userHand == 1 && computerHand == 0) || (userHand == 2 && computerHand == 1)
+            	    || (userHand == 0 && computerHand == 2)) {
             	
-            	    // ユーザーが勝ちの場合
-            	    System.out.println("やるやん。");
-            	    System.out.println("次は俺にリベンジさせて\n");
-            	    
-            	    // ゲーム終了フラグをセット
-            	    continueGame = false;
-            	    
-            	} else if ((userHand == 0 && computerHand == 2) || (userHand == 1 && computerHand == 0)
-            	    || (userHand == 2 && computerHand == 1)) {
-            		
-            	    // ユーザーの負けの場合
+            	    // ユーザーが負けの場合
             	    System.out.println("俺の勝ち！");
             	    
             	    if (userHand == 0 && computerHand == 2) {
@@ -93,16 +83,27 @@ class Qes1_3 {
             	    } else {
             	    	
             	        System.out.println("たかがじゃんけん、そう思ってないですか？\nそれやったら次も、俺が勝ちますよ\n");
+            	        
             	    }
+            	    
+            	} else if (userHand == computerHand) {
+            		
+            	    // 引き分けの場合
+            		
+            	    System.out.println("DRAW あいこ もう一回しましょう！\n");
+            	    
+            	} else {
+            		
+            	    // ユーザーが勝ちの場合
+            		
+            	    System.out.println("やるやん。");
+            	    
+            	    System.out.println("次は俺にリベンジさせて\n");
             	    
             	    // ゲーム終了フラグをセット
             	    continueGame = false;
             	    
-            	} else {
-            		
-            	    // 引き分けの場合
-            	    System.out.println("DRAW あいこ もう一回しましょう！\n");
-            }
+            	}
             
             // ゲーム継続フラグが true の場合は繰り返し
         } while (continueGame);
