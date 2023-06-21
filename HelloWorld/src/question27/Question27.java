@@ -57,7 +57,7 @@ class Question27 {
 
 		// Scannerを閉じる
 		scanner.close();
-		
+
 		// 改行
 		System.out.println();
 
@@ -71,85 +71,84 @@ class Question27 {
 			String[] animalInfo = animal.split(":");
 
 			// 動物の名前を変数に代入
-			String name = animalInfo[0];
+			String name = (animalInfo[0]);
 
 			// 動物の体長を変数に代入
-			String length = animalInfo[1] + "m";
+			String length = (animalInfo[1]) + "m";
 
 			// 動物の速度を変数に代入
-			String speed = animalInfo[2] + "km/h";
+			String speed = (animalInfo[2]) + "km/h";
 
 			// 学名の変数を宣言
-			String scientificName = null;
+			String scientificName = "";
 
-				// 変数による条件分岐
-				switch (name) {
+			// 変数による条件分岐
+			switch (name) {
 
-				// ライオンの場合
-				case "ライオン":
+			// ライオンの場合
+			case "ライオン":
 
 				// パンテラ レオを代入
 				scientificName = "パンテラ レオ";
-				
-				// switchi文を終了
+
 				break;
-				
-				// ゾウの場合
-				case "ゾウ":
+
+			// ゾウの場合
+			case "ゾウ":
 
 				// ロキソドンタ・サイクロティスを代入
 				scientificName = "ロキソドンタ・サイクロティス";
-				
-				// switchi文終了
+
 				break;
 
-				// パンダの場合
-				case "パンダ":
+			// パンダの場合
+			case "パンダ":
 
 				// アイルロポダ・メラノレウカを代入
 				scientificName = "アイルロポダ・メラノレウカ";
-				
-				// switchi文終了
+
 				break;
 
-				// チンパンジーの場合
-				case "チンパンジー":
+			// チンパンジーの場合
+			case "チンパンジー":
 
 				// パン・トゥログロディテスを代入
 				scientificName = "パン・トゥログロディテス";
-				
-				// switchi文終了
+
 				break;
 
-				// シマウマの場合
-				case "シマウマ":
+			// シマウマの場合
+			case "シマウマ":
 
 				// チャップマンシマウマを代入
 				scientificName = "チャップマンシマウマ";
-				
-				// switchi文終了
+
 				break;
 
-				// インコの場合
-				case "インコ":
+			// インコの場合
+			case "インコ":
 
 				// 不明を代入
 				scientificName = "不明";
-				
-				// switchi文終了
+
 				break;
-	
-				}
+			}
 
-			// 動物名ステータス出力
-			System.out.println("動物名：" + name);
-			System.out.println("体長：" + length);
-			System.out.println("速度：" + speed);
-			System.out.println("学名：" + scientificName);				
-			System.out.println();
+			// Nullチェック
+			if (name != null && length != null && speed != null && scientificName != null) {
 
+				// 出力
+				System.out.println("動物名：" + name);
+
+				System.out.println("体長：" + length);
+
+				System.out.println("速度：" + speed);
+
+				System.out.println("学名：" + scientificName);
+
+				System.out.println();
+
+			} 
 		}
-		
 	}
-	
 }
