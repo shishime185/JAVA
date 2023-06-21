@@ -19,14 +19,29 @@ public class Question23_1 {
 
 		// ステータスの設定
 		lion.setName("ライオン");
+		
 		lion.setLength(2.1);
+		
 		lion.setSpeed(80);
 
 		// 出力
 		System.out.println("動物名：" + lion.getName());
+		
 		System.out.println("体長：" + lion.getLength() + "m");
+		
 		System.out.println("速度：" + lion.getSpeed() + "km/h");
 
 	}
+	
+	// Nullをチェックするメソッド
+	public static <T> T checkNull(T value) {
+		
+        if (value == null) {
+        	
+            return null;
+         }
+        
+        return value;
+    }
 
 }
