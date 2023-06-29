@@ -37,15 +37,18 @@
 
 package qestion29;
 
-
 public class Execute {
 
-    public static void main(String[] args) {
-        Qestion29Processor processor = new Qestion29Processor();
-        processor.Execute();
-    }
+	public static void main(String[] args) {
 
-    public void execute() {
-        // 処理の内容を記述します
-    }
+		// インスタンスを作成し、変数に格納
+		Qestion29Processor processor = new Qestion29Processor();
+
+		// 変数に格納されたメソッドを呼び出す
+		processor.Execute();
+	}
+
+	public void execute() {
+		// 処理の内容を記述します
+	}
 }

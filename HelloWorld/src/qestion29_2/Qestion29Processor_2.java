@@ -46,77 +46,94 @@ import java.util.Scanner;
 
 public class Qestion29Processor_2 {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Qestion29Processor_2 processor = new Qestion29Processor_2();
+		Qestion29Processor_2 processor = new Qestion29Processor_2();
 
-        processor.Execute();
-    }
+		processor.Execute();
+	}
 
-    public void Execute() {
+	public void Execute() {
 
-        // 都道府県の情報を格納するリストを作成
-        List<String> prefectures = new ArrayList<>();
+		// 都道府県の情報を格納するリストを作成
+		List<String> prefectures = new ArrayList<>();
 
-        prefectures.add("北海道:札幌市:83424");
-        prefectures.add("青森県:青森市:9646");
-        prefectures.add("岩手県:盛岡市:15275");
-        prefectures.add("宮城県:仙台市:7282");
-        prefectures.add("秋田県:秋田市:11638");
-        prefectures.add("山形県:山形市:9323");
-        prefectures.add("福島県:福島市:13784");
-        prefectures.add("茨城県:水戸市:6097");
-        prefectures.add("栃木県:宇都宮市:6408");
-        prefectures.add("群馬県:前橋市:6362");
-        prefectures.add("埼玉県:さいたま市:3798");
+		prefectures.add("北海道:札幌市:83424");
 
-        // コンソールから入力を受け取るためのScannerを作成
-        Scanner scanner = new Scanner(System.in);
+		prefectures.add("青森県:青森市:9646");
 
-        String input = scanner.nextLine();
+		prefectures.add("岩手県:盛岡市:15275");
 
-        // 入力された数字をカンマで分割し、整数のリストに変換
-        String[] indices = input.split(",");
+		prefectures.add("宮城県:仙台市:7282");
 
-        ArrayList<Integer> indexList = new ArrayList<>();
+		prefectures.add("秋田県:秋田市:11638");
 
-        for (String index : indices) {
+		prefectures.add("山形県:山形市:9323");
 
-            // Nullチェック
-            if (index != null && !index.trim().isEmpty()) {
+		prefectures.add("福島県:福島市:13784");
 
-                // インデックスを整数に変換し、リストに追加
-                indexList.add(Integer.parseInt(index.trim()));
+		prefectures.add("茨城県:水戸市:6097");
 
-            }
-        }
+		prefectures.add("栃木県:宇都宮市:6408");
 
-        // リストを降順にソート
-        Collections.sort(indexList, Collections.reverseOrder());
+		prefectures.add("群馬県:前橋市:6362");
 
-        // ソートされたインデックスを使って都道府県情報を表示
-        for (int index : indexList) {
+		prefectures.add("埼玉県:さいたま市:3798");
 
-            if (index >= 0 && index < prefectures.size()) {
+		// コンソールから入力を受け取るためのScannerを作成
+		Scanner scanner = new Scanner(System.in);
 
-                // 都道府県情報をコロンで分割して必要な情報を取得
-                String[] prefectureInfo = prefectures.get(index).split(":");
+		String input = scanner.nextLine();
 
-                if (prefectureInfo.length >= 3) {
+		// 入力された数字をカンマで分割し、整数のリストに変換
+		String[] indices = input.split(",");
 
-                    String prefectureName = prefectureInfo[0];
-                    String capitalCity = prefectureInfo[1];
-                    double area = Double.parseDouble(prefectureInfo[2]);
+		ArrayList<Integer> indexList = new ArrayList<>();
 
-                    // 出力
-                    System.out.println("\n都道府県名：" + prefectureName);
-                    System.out.println("県庁所在地：" + capitalCity);
-                    System.out.println("面積：" + area + "km2");
-                }
-            }
-        }
+		for (String index : indices) {
 
-        // Scannerを閉じる
-        scanner.close();
-    }
+			// Nullチェック
+			if (index != null && !index.trim().isEmpty()) {
+
+				// インデックスを整数に変換し、リストに追加
+				indexList.add(Integer.parseInt(index.trim()));
+
+			}
+		}
+
+		// リストを降順にソート
+		Collections.sort(indexList, Collections.reverseOrder());
+
+		// ソートされたインデックスを使って都道府県情報を表示
+		for (int index : indexList) {
+
+			if (index >= 0 && index < prefectures.size()) {
+
+				// 都道府県情報をコロンで分割して必要な情報を取得
+				String[] prefectureInfo = prefectures.get(index).split(":");
+
+				if (prefectureInfo.length >= 3) {
+
+					// 都道府県名を都道府県情報の1番目の要素に代入
+					String prefectureName = prefectureInfo[0];
+
+					// 県庁所在地を都道府県情報の2番目の要素に代入
+					String capitalCity = prefectureInfo[1];
+
+					// 面積を都道府県情報の3番目の要素に代入
+					double area = Double.parseDouble(prefectureInfo[2]);
+
+					// 出力
+					System.out.println("\n都道府県名：" + prefectureName);
+
+					System.out.println("県庁所在地：" + capitalCity);
+
+					System.out.println("面積：" + area + "km2");
+				}
+			}
+		}
+
+		// Scannerを閉じる
+		scanner.close();
+	}
 }
