@@ -47,107 +47,103 @@ class Question27 {
 		*/
 
 		// 出力
-		System.out.println("コンソールに文字を入力してください");
+		System.out.print("コンソールに文字を入力してください");
 
-		// Scannerオブジェクト作成
-		Scanner scanner = new Scanner(System.in);
+        // Scannerオブジェクト作成
+        Scanner scanner = new Scanner(System.in);
 
-		// 入力を受け取り代入
-		String input = scanner.nextLine();
+        // 入力を受け取り代入
+        String input = scanner.nextLine();
 
-		// Scannerを閉じる
-		scanner.close();
+        // Scannerを閉じる
+        scanner.close();
 
-		// 改行
-		System.out.println();
+        // カンマで区切って配列に格納
+        String[] animals = input.split(",");
 
-		// カンマで区切って配列に格納
-		String[] animals = input.split(",");
+        // 配列の各要素を処理するための繰り返しを開始
+        for (String animal : animals) {
 
-		// 配列の各要素を処理するための繰り返しを開始
-		for (String animal : animals) {
+            // 動物の情報をコロンで区切って配列に代入
+            String[] animalInfo = animal.split(":");
 
-			// 動物の情報をコロンで区切って配列に代入
-			String[] animalInfo = animal.split(":");
+            // 動物の名前を変数に代入
+            String name = (animalInfo[0]);
 
-			// 動物の名前を変数に代入
-			String name = (animalInfo[0]);
+            // 動物の体長を変数に代入
+            String length = (animalInfo[1]) + "m";
 
-			// 動物の体長を変数に代入
-			String length = (animalInfo[1]) + "m";
+            // 動物の速度を変数に代入
+            String speed = (animalInfo[2]) + "km/h";
 
-			// 動物の速度を変数に代入
-			String speed = (animalInfo[2]) + "km/h";
+            // 学名の変数を宣言
+            String scientificName = "";
 
-			// 学名の変数を宣言
-			String scientificName = "";
+            // 変数による条件分岐
+            switch (name) {
 
-			// 変数による条件分岐
-			switch (name) {
+                // ライオンの場合
+                case "ライオン":
 
-			// ライオンの場合
-			case "ライオン":
+                    // パンテラ レオを代入
+                    scientificName = "パンテラ レオ";
 
-				// パンテラ レオを代入
-				scientificName = "パンテラ レオ";
+                    break;
 
-				break;
+                // ゾウの場合
+                case "ゾウ":
 
-			// ゾウの場合
-			case "ゾウ":
+                    // ロキソドンタ・サイクロティスを代入
+                    scientificName = "ロキソドンタ・サイクロティス";
 
-				// ロキソドンタ・サイクロティスを代入
-				scientificName = "ロキソドンタ・サイクロティス";
+                    break;
 
-				break;
+                // パンダの場合
+                case "パンダ":
 
-			// パンダの場合
-			case "パンダ":
+                    // アイルロポダ・メラノレウカを代入
+                    scientificName = "アイルロポダ・メラノレウカ";
 
-				// アイルロポダ・メラノレウカを代入
-				scientificName = "アイルロポダ・メラノレウカ";
+                    break;
 
-				break;
+                // チンパンジーの場合
+                case "チンパンジー":
 
-			// チンパンジーの場合
-			case "チンパンジー":
+                    // パン・トゥログロディテスを代入
+                    scientificName = "パン・トゥログロディテス";
 
-				// パン・トゥログロディテスを代入
-				scientificName = "パン・トゥログロディテス";
+                    break;
 
-				break;
+                // シマウマの場合
+                case "シマウマ":
 
-			// シマウマの場合
-			case "シマウマ":
+                    // チャップマンシマウマを代入
+                    scientificName = "チャップマンシマウマ";
 
-				// チャップマンシマウマを代入
-				scientificName = "チャップマンシマウマ";
+                    break;
 
-				break;
+                // インコの場合
+                case "インコ":
 
-			// インコの場合
-			case "インコ":
+                    // 不明を代入
+                    scientificName = "不明";
 
-				// 不明を代入
-				scientificName = "不明";
+                    break;
+            }
 
-				break;
-			}
+            // Nullチェック
+            if (name != null && length != null && speed != null && scientificName != null) {
 
-			// Nullチェック
-			if (name != null && length != null && speed != null && scientificName != null) {
+                // 出力
+                System.out.println("動物名：" + name);
 
-				// 出力
-				System.out.println("動物名：" + name);
+                System.out.println("体長：" + length);
 
-				System.out.println("体長：" + length);
+                System.out.println("速度：" + speed);
 
-				System.out.println("速度：" + speed);
+                System.out.println("学名：" + scientificName);
 
-				System.out.println("学名：" + scientificName);
-
-				System.out.println();
-
+                System.out.println();
 			} 
 		}
 	}
