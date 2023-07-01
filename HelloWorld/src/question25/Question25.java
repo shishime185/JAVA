@@ -66,19 +66,25 @@ public class Question25 {
 		SubCharacter subCharacter = generator.generateRandomStatus(name);
 
 		// 挨拶とステータス出力
-		System.out.println("こんにちは、" + subCharacter.getName() + "さん");
 
-		System.out.println("ステータス");
+		// nullチェック
+		if (subCharacter != null) {
 
-		System.out.println("HP: " + subCharacter.getHp());
+			System.out.println("こんにちは、" + subCharacter.getName() + "さん");
 
-		System.out.println("MP: " + subCharacter.getMp());
+			System.out.println("ステータス");
 
-		System.out.println("攻撃力: " + subCharacter.getAttack());
+			System.out.println("HP: " + subCharacter.getHp());
 
-		System.out.println("素早さ: " + subCharacter.getAgility());
+			System.out.println("MP: " + subCharacter.getMp());
 
-		System.out.println("防御力: " + subCharacter.getDefense());
+			System.out.println("攻撃力: " + subCharacter.getAttack());
+
+			System.out.println("素早さ: " + subCharacter.getAgility());
+
+			System.out.println("防御力: " + subCharacter.getDefense());
+
+		}
 
 		// 出力
 		System.out.println("さあ冒険に出かけよう！");
